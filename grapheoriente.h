@@ -15,6 +15,7 @@ public:
     bool lireGraphe(std::string nomFic) override;
 
     void rang(vector<int>& rang) override;
+    void Djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr);
     bool codagePrufer (vector <int> & prufer) override;
     bool calculDistance (int racine, vector<int> &dist) override;
 private:

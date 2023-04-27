@@ -67,6 +67,50 @@ bool GrapheOriente::codagePrufer (vector <int> & prufer)
     return false;
 }
 
+void GrapheOriente::Djikstra (vector<int>& fs, vector<int>& aps, vector<vector<int>>& p, int s, vector<int>& d, vector<int>& pr) // p matrice des poids,d matrice distance, pr matrice predecesseurs, s
+{
+    int n = aps[0];
+    pr.resize(n+1);
+    d.resize(n+1);
+    vector<int> inS(n+1); // inS[i] = 0 ou 1, pour dire quels sont les sommets qui restent a traiter
+    // Initialisation des tableaux d, pr et inS
+    for (int i = 1; i <= n; i++) {
+        d[i] = p[s][i];
+        inS[i] = 1;
+        pr[i] = -1;
+    }
+    d[s] = 0;
+    pr[s] = 0;
+    inS[s] = 0; // on supprime le sommet s
+    int ind = n - 1;
+    while (ind > 0) {
+        // Calcul du minimum selon d des sommets de S
+        int m = INT_MAX;
+        int j = -1;
+        for (int i = 1; i <= n; i++) {
+            if (inS[i] == 1 && d[i] < m) {
+                m = d[i];
+                j = i;
+            }
+        }
+        if (j == -1) return;
+        inS[j] = 0;
+        ind--;
+        int k = aps[j];
+        while (fs[k] != 0) {
+            if (inS[fs[k]] == 1) {
+                int v = d[j] + p[j][fs[k]];
+                if (v < d[fs[k]]) {
+                    d[fs[k]] = v;
+                    pr[fs[k]] = j;
+                }
+            }
+            k++;
+        }
+    }
+}
+
+
 bool GrapheOriente::lireGraphe(std::string nomFic)
 {
         std::ifstream fic(nomFic);
