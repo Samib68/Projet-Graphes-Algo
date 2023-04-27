@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>890</x>
-     <y>9</y>
+     <y>10</y>
      <width>351</width>
      <height>581</height>
     </rect>
@@ -182,6 +182,55 @@
      </property>
      <property name="text">
       <string>..................</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>440</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nom de fichier (.txt) : </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boutton_sauvegarder_graphe">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>450</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sauvegarder un graphe</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boutton_charger_graphe">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>490</y>
+       <width>131</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Charger un graphe</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>460</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
      </property>
     </widget>
    </widget>
