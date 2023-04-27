@@ -139,6 +139,7 @@ void Widget::on_pushButton_clicked()
     }
 }
 
+
 void Widget::on_Button_sauvegarder_graphe_clicked()
 {
     QString qstr = ui->text_nomFic->toPlainText();
@@ -172,5 +173,4 @@ void Widget::on_Button_charger_graphe_clicked()
         msg.exec();
         }
 }
-
 
