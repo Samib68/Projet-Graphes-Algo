@@ -1,6 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
-
+#include <QMessageBox>
 #include "graphe.h"
 #include "graphenonoriente.h"
 #include "grapheoriente.h"
