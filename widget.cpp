@@ -139,3 +139,38 @@ void Widget::on_pushButton_clicked()
     }
 }
 
+void Widget::on_Button_sauvegarder_graphe_clicked()
+{
+    QString qstr = ui->text_nomFic->toPlainText();
+    std::string txt = qstr.toStdString();
+    QMessageBox msg;
+        if(grapheActuel->ecrireGraphe(txt)==false)
+        {
+        msg.setText("Fichier introuvable");
+        msg.exec();
+        }
+        else{
+        msg.setText("Graphe sauvegarder");
+        msg.exec();
+        }
+
+}
+
+
+void Widget::on_Button_charger_graphe_clicked()
+{
+        QString qstr = ui->text_nomFic->toPlainText();
+        std::string txt = qstr.toStdString();
+        QMessageBox msg;
+        if(grapheActuel->lireGraphe(txt)==false)
+        {
+        msg.setText("Fichier introuvable");
+        msg.exec();
+        }
+        else{
+        msg.setText("Graphe chargé");
+        msg.exec();
+        }
+}
+
+
