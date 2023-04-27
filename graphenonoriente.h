@@ -2,6 +2,7 @@
 #define GRAPHENONORIENTE_H
 
 #include "graphe.h"
+#include <string>
 
 class GrapheNonOriente : public Graphe
 {
